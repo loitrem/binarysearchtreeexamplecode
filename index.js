@@ -143,6 +143,9 @@ class BST {
             if (node.right){traverse(node.right);}
         }
 
+        //calls traverse
+        traverse(this.root)
+
         //return the array
         return result;
     }
@@ -167,6 +170,9 @@ class BST {
             if (node.right){traverse(node.right);}
         }
 
+        //calls traverse
+        traverse(this.root)
+
         //return the array
         return result;
     }
@@ -189,6 +195,9 @@ class BST {
             //capture root node value
             result.push(node.value);
         }
+
+        //calls traverse
+        traverse(this.root)
 
         //return the array
         return result;
@@ -213,7 +222,7 @@ class BST {
             let currentNode = queue.shift();
 
             //adds that item taken from queue array to the end of result array
-            result.push(currentNode);
+            result.push(currentNode.value);
 
             // if the current node has a left child
             if (currentNode.left){
@@ -228,19 +237,6 @@ class BST {
                 //push that right child into the queue array
                 queue.push(currentNode.right);
             }
-        }
-
-        //nested recursive function
-        const traverse = (node) => {
-
-            //capture root node value
-            result.push(node.value);
-
-            //checks if there is a left node keep traversing left
-            if (node.left) {traverse(node.left);}            
-
-            //if right child exists
-            if (node.right){traverse(node.right);}
         }
 
         //return the array
@@ -273,6 +269,14 @@ console.log("********************************************");
 console.log('bst min = ', bst.min());
 console.log("********************************************");
 console.log('bst max = ', bst.max());
+console.log("********************************************");
+console.log('bst = ', bst.dfsInOrder());
+console.log("********************************************");
+console.log('bst = ', bst.dfsPreOrder());
+console.log("********************************************");
+console.log('bst = ', bst.dfsPostOrder());
+console.log("********************************************");
+console.log('bfs = ', bst.bfs());
 console.log("********************************************");
 console.log('bst insert 14 = ', bst.insert(14));
 console.log("********************************************");
